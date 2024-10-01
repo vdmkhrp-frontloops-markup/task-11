@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/style.scss" />
     <link rel="icon" href="./src/img/favicon.ico" sizes="32x32" />
     <link rel="icon" href="./src/img/favicon.svg" type="image/svg+xml" />
@@ -11,38 +17,44 @@
   </head>
   <body>
     <div class="slider">
-      <div class="slider__wrap">
-        <header class="slider__header">
-          <nav class="slider__nav">
-            <a href="#!" class="slider__link slider__link--active">SYNTHETIC</a>
-            <a href="#!" class="slider__link">wool</a>
-            <a href="#!" class="slider__link">denim</a>
-            <a href="#!" class="slider__link">silk</a>
-            <a href="#!" class="slider__link">line</a>
-          </nav>
-          <p class="slider__description">
-            Loads should be under 8 pounds. It is recommended using neutral
-            detergent to prevent damage to the cloth and to improve the washing
-            results.
-          </p>
-        </header>
-        <div class="slider__cards">
-          <button type="button" class="slider__button"></button>
-          <button type="button" class="slider__button slider__button--next"></button>
-          <div class="card">
-            <h4 class="card__title">Timer</h4>
-            <h6 class="card__subtitle">45 min</h6>
-            <button type="button" class="card__button">start</button>
-          </div>
-          <div class="card">
-            <h4 class="card__title">Temperature</h4>
-            <h6 class="card__subtitle">Cold</h6>
-          </div>
-          <div class="card">
-            <h4 class="card__title">Load</h4>
-            <h6 class="card__subtitle">Medium</h6>
-          </div>
+      <header class="slider__header">
+        <nav class="slider__nav">
+          <a href="#!" class="slider__link slider__link--active">SYNTHETIC</a>
+          <a href="#!" class="slider__link">wool</a>
+          <a href="#!" class="slider__link">denim</a>
+          <a href="#!" class="slider__link">silk</a>
+          <a href="#!" class="slider__link">line</a>
+        </nav>
+        <p class="slider__description">
+          Loads should be under 8 pounds. It is recommended using neutral
+          detergent to prevent damage to the cloth and to improve the washing
+          results.
+        </p>
+      </header>
+      <div class="slider__cards">
+        <div class="card">
+          <h4 class="card__title">Timer</h4>
+          <h6 class="card__subtitle">45 min</h6>
+          <button type="button" class="card__button">start</button>
         </div>
+        <div class="card">
+          <h4 class="card__title">Temperature</h4>
+          <h6 class="card__subtitle">Cold</h6>
+        </div>
+        <div class="card">
+          <h4 class="card__title">Load</h4>
+          <h6 class="card__subtitle">Medium</h6>
+        </div>
+        <button type="button" class="slider__button">
+          <svg viewBox="-8.5 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.281 7.188v17.594L0 16.001z" fill="currentColor" />
+          </svg>
+        </button>
+        <button type="button" class="slider__button slider__button--next">
+          <svg viewBox="-8.5 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.281 7.188v17.594L0 16.001z" fill="currentColor" />
+          </svg>
+        </button>
       </div>
     </div>
   </body>

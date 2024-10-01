@@ -1,15 +1,16 @@
 import { defineConfig } from "vite";
-import { resolve } from "path";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
 import fs from "fs";
-import { dirname } from "path";
 import { createHtmlPlugin } from "vite-plugin-html";
 
-const __dirname = dirname(new URL(import.meta.url).pathname);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const getHtmlInputs = () => {
   const files = fs
     .readdirSync(__dirname)
     .filter((file) => file.endsWith(".html"));
+
   return files.reduce((inputs, file) => {
     const key = file.replace(/\.html$/, "");
     inputs[key] = resolve(__dirname, file);
@@ -25,6 +26,14 @@ export default defineConfig({
       minify: true,
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        importers: [],
+      },
+    },
+  },
   build: {
     rollupOptions: {
       input: {

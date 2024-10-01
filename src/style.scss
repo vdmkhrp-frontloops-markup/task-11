@@ -19,41 +19,50 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+  font-family: "Roboto", system-ui;
   background-color: #de8a89;
   color: #fff;
 }
 
 .slider {
-  &__wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px;
+  padding-inline: 130px;
+  margin-inline: auto;
+  row-gap: 70px;
+
+  &__header {
     display: flex;
     flex-direction: column;
-    row-gap: 70px;
-    max-width: 1040px;
-    margin-inline: auto;
+    row-gap: 43px;
   }
 
   &__nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     column-gap: 75px;
+    overflow: auto;
+    margin-right: calc(50% - 50vw);
   }
 
   &__link {
-    font-size: 52px;
+    font-size: 60px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
     color: rgba(#fff, 0.4);
-    margin-bottom: 43px;
     transition: color 300ms ease;
 
     &--active {
       color: #fff;
+      pointer-events: none;
     }
 
     @media (hover: hover) {
       &:hover {
-        color: #fff;
+        color: rgba(#fff, 0.7);
       }
     }
   }
@@ -73,19 +82,32 @@ body {
     aspect-ratio: 1;
     padding: 0;
     background-color: rgba(#fff, 0.4);
+    color: rgba(#000, 0.4);
     border: none;
-    transition: background-color 300ms ease;
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
 
     @media (hover: hover) {
       cursor: pointer;
 
       &:hover {
-        background-color: #fff;
+        background-color: rgba(#fff, 0.7);
+        color: rgba(#000, 0.7);
       }
+    }
+
+    svg {
+      width: 20px;
+      aspect-ratio: 1;
     }
 
     &--next {
       left: 100%;
+
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -94,7 +116,6 @@ body {
     position: relative;
   }
 }
-
 
 .card {
   position: relative;
@@ -128,14 +149,23 @@ body {
   &__button {
     position: absolute;
     top: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 304px;
+    left: 22px;
+    right: 22px;
     border: none;
+    border-radius: 4px;
     background-color: #131313;
     color: #fff;
     padding: 25px 40px;
     font-size: 18px;
     text-transform: uppercase;
+    transition: transform 300ms ease;
+
+    @media (hover: hover) {
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
   }
 }
